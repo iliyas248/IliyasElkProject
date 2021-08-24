@@ -43,6 +43,8 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 ╠══════════╬══════════════════════════════════════════════╬════════════╬══════════════════════╣
 ║ ELK      ║ Monitoring & log aggregation for Webs 1 & 2  ║ 10.1.0.5   ║ Linux (ubuntu 20.04) ║
 ╠══════════╬══════════════════════════════════════════════╬════════════╬══════════════════════╣
+║          ║                                              ║            ║                      ║
+╚══════════╩══════════════════════════════════════════════╩════════════╩══════════════════════╝
 
 ### Access Policies
 The machines on the internal network are not exposed to the public Internet.
