@@ -31,12 +31,17 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_
 
-| Name          | Function                                    | IP Address       | Operating System                  |
-|----------     |---------------------- ------------------    |------------      |------------------                 |
-| Jump Box      | Gateway                                     |  10.0.0.4        | Linux                             |
-| Web-1         | Host a container(DVWA)                      |  10.0.0.5        | Linux                             |
-| Web-2         | Host a container(DVWA)                      |  10.0.0.8        | Linux                             |
-| ELK2          | Monitoring & log aggregation for Web3&4     |  10.1.0.5        | Linux                             |
+
+ Name     ║ Function                                     ║ IP Address ║ Operating System     ║
+╠══════════╬══════════════════════════════════════════════╬════════════╬══════════════════════╣
+║ Jump Box ║ Gateway                                      ║ 10.0.0.4   ║ Linux (ubuntu 20.04) ║
+╠══════════╬══════════════════════════════════════════════╬════════════╬══════════════════════╣
+║ Web-1    ║ Host a Container DVWA                        ║ 10.0.0.5   ║ Linux (ubuntu 20.04) ║
+╠══════════╬══════════════════════════════════════════════╬════════════╬══════════════════════╣
+║ Web-2    ║ Host a Container DVWA                        ║ 10.0.0.8   ║ Linux (ubuntu 20.04) ║
+╠══════════╬══════════════════════════════════════════════╬════════════╬══════════════════════╣
+║ ELK      ║ Monitoring & log aggregation for Webs 1 & 2  ║ 10.1.0.5   ║ Linux (ubuntu 20.04) 
+
 
 ### Access Policies
 The machines on the internal network are not exposed to the public Internet.
