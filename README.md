@@ -108,14 +108,14 @@ _As a **Bonus**, provide the specific commands the user will need to run to down
 
 http://[your.ELK-VM.External.IP]:5601/app/kibana. In this case http://20.106.148.92:5601/app/kibana.
 
--ssh azdmin@JumpBox(PrivateIP):  in this case ssh  azdmin@52.151.1.114
--sudo docker container list -a (This will list the ansible containers. In this case, the suspicious_darwin)
--sudo docker start (to start suspicious darwin)
--sudo docker attach (suspicious_darwin)
--cd /etc/ansible
--ansible-playbook elk-playbook.yml (Installs and Configures ELK-Server)
--cd /etc/ansible/
--ansible-playbook firebeats-playbook.yml (Installs and configures firebeats)
--cd /etc/ansible
--ansible-playbook metricbeats-playbook.yml (Installs and configures metricbeats)
--Open a new browser on Personal Workstation, navigate to (ELK-Server-PublicIP:5601/app/kibana) - This will bring up Kibana Web Portal
+1. ssh azdmin@JumpBox(PrivateIP):  in this case ssh  azdmin@52.151.1.114
+2. sudo docker container list -a (This will list the ansible containers. In this case, the suspicious_darwin)
+3. sudo docker start (to start suspicious darwin)
+4. sudo docker attach (suspicious_darwin)
+5. cd /etc/ansible
+6. ansible-playbook elk-playbook.yml (Installs and Configures ELK-Server)
+7. cd /etc/ansible/
+8. ansible-playbook firebeats-playbook.yml (Installs and configures firebeats)
+9. cd /etc/ansible
+10. ansible-playbook metricbeats-playbook.yml (Installs and configures metricbeats)
+11. Open a new browser on Personal Workstation, navigate to (ELK-Server-PublicIP:5601/app/kibana) - This will bring up Kibana Web Portal
