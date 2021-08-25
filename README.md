@@ -3,7 +3,7 @@
  ## Automated ELK Stack Deployment
 The files in this repository were used to configure the network depicted below.
 
-https://github.com/iliyas248/IliyasElkProject/issues/2
+
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the YAML file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -88,31 +88,47 @@ These Beats allow us to collect the following information from each machine:
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
 SSH into the control node and follow the steps below:
-- Copy the Ansible.cfg file to etc/ansible.
+- Copy the filebeat-cfg.yml file to etc/ansible.
 - Update the host file to include the IP addresses of the VMs.
-- Run the playbook, and navigate to Ansible/yml file to check that the installation worked as expected.
-_TODO: Answer the following questions to fill in the blanks:_
+- Run the playbook, and navigate to ELK-Server-PublicIP:5601/app/kibana to check that the installation worked as expected.
 
-- _Which file is the playbook? Where do you copy it?_ the hosts file
+- _Which file is the playbook? Where do you copy it? 
+
+The playbook files are 
+elk-playbook.yml - used to install ELK Server
+filebeat-playbook.yml - Used to install and configure Filebeat on Elk Server and DVWA servers
+metricbeat-playbook.yml - Used to install and configure Metricbeat on Elk Server and DVWA servers
+
+They are copied at /etc/ansible/
+
 - _Which file do you update to make Ansible run the playbook on a specific machine? 
+ 
+The host file. The file path is /etc/ansible/hosts.cfg
 
-How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
+- _How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
+
+In /etc/ansible/hosts, you will specify where you want each to be installed
 
 - _Which URL do you navigate to in order to check that the ELK server is running?
 
+The URL is http://[your.ELK-VM.External.IP]:5601/app/kibana. In this case http://20.106.148.92:5601/app/kibana.
 
 -As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
 
-http://[your.ELK-VM.External.IP]:5601/app/kibana. In this case http://20.106.148.92:5601/app/kibana.
-
-1. ssh azdmin@JumpBox(PrivateIP):  in this case ssh  azdmin@52.151.1.114
+1. ssh to azdmin@JumpBox(PrivateIP):  in this case ssh azdmin@52.151.1.114
 2. sudo docker container list -a (This will list the ansible containers. In this case, the suspicious_darwin)
-3. sudo docker start (to start suspicious darwin)
-4. sudo docker attach (suspicious_darwin)
+3. sudo docker start suspicious_darwin
+4. sudo docker attach suspicious_darwin
 5. cd /etc/ansible
 6. ansible-playbook elk-playbook.yml (Installs and Configures ELK-Server)
 7. cd /etc/ansible/
-8. ansible-playbook firebeats-playbook.yml (Installs and configures firebeats)
+8. ansible-playbook filebeat-playbook.yml (Installs and configures filebeat)
 9. cd /etc/ansible
-10. ansible-playbook metricbeats-playbook.yml (Installs and configures metricbeats)
+10. ansible-playbook metricbeat-playbook.yml (Installs and configures metricbeat)
 11. Open a new browser on Personal Workstation, navigate to (ELK-Server-PublicIP:5601/app/kibana) - This will bring up Kibana Web Portal
+
+### References
+
+ilebeat: Lightweight Log Analysis & Elasticsearch. (n.d.). Retrieved August 22, 2020, from https://www.elastic.co/beats/filebeat 
+
+Metricbeat: Lightweight Shipper for Metrics. (n.d.). Retrieved August 22, 2020, from https://www.elastic.co/beats/metricbeat
