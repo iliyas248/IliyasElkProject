@@ -7,7 +7,7 @@ https://github.com/iliyas248/IliyasElkProject/issues/2
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the YAML file may be used to install only certain pieces of it, such as Filebeat.
 
-filebeat_playbook.yml.txt
+![filebeat_playbook_yml](https://user-images.githubusercontent.com/83253408/130723627-99b1207d-9c03-4806-baeb-4442cdc1e5cd.png)
 
 1. elk-playbook.yml: install and launch sebp/elk container on ELK server
 2. filebeat-configuration.yml: the pre-defined configuration file of Filebeat which has updated Kibana and Elasticsearch server information
