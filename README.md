@@ -3,7 +3,7 @@
  ## Automated ELK Stack Deployment
 The files in this repository were used to configure the network depicted below.
 
-https://github.com/iliyas248/IliyasElkProject/issues/1
+
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the YAML file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -104,7 +104,7 @@ How do I specify which machine to install the ELK server on versus which to inst
 
 - _Which URL do you navigate to in order to check that the ELK server is running?
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+###-As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
 
 http://[your.ELK-VM.External.IP]:5601/app/kibana. In this case http://20.106.148.92:5601/app/kibana.
 
