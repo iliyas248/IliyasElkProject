@@ -7,7 +7,7 @@ https://github.com/iliyas248/IliyasElkProject/issues/2
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the YAML file may be used to install only certain pieces of it, such as Filebeat.
 
-![filebeat_playbook_yml](https://user-images.githubusercontent.com/83253408/130723627-99b1207d-9c03-4806-baeb-4442cdc1e5cd.png)
+
 
 1. elk-playbook.yml: install and launch sebp/elk container on ELK server
 2. filebeat-configuration.yml: the pre-defined configuration file of Filebeat which has updated Kibana and Elasticsearch server information
@@ -24,17 +24,15 @@ These files have been tested and used to generate a live ELK deployment on Azure
 - How to Use the Ansible Build
 
 ## Description of the Topology
-The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
+The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the Damn Vulnerable Web Application.
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+Load balancers help ensure environment availability through distribution of incoming data to web servers. Jump boxes allow for more easy administration of multiple systems and provide an additional layer between the outside and internal assets.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the filesystem and system performance. The ELK stack is in a separate region and virtual network. This helps separate operational services with production services.
 
+Filebeat watch the logs,collect log evernt. Metricbeat watch the system performance (CPU,MEMORY,Network Traffic,etc...).
+
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_
-
-
-
 
 | Name     	| Function                                     	| IP Address 	| Operating System     	|
 |----------	|----------------------------------------------	|------------	|----------------------	|
@@ -44,38 +42,35 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 | ELK      	| Monitoring & log aggregation for Webs 1 & 2  	| 10.1.0.5   	| Linux (ubuntu 20.04) 	|
 |          	|                                              	|            	|                      	|
 
-
-
-
 ### Access Policies
 The machines on the internal network are not exposed to the public Internet.
-Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-73.136.222.109 (My Local Home IP)
 
-Machines within the network can only be accessed by Jump Box or ELK Machine via SSH
-Jump box ( 10.0.0.10)  ELK Machine  ( 10.2.0.5)
+Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses: (Personal IP Address)
+
+Machines within the network can only be accessed by Jump Box or ELK Machine via SSH by
+Jump box ( 10.0.0.4) and ELK Machine  ( 10.1.0.5)
 
 A summary of the access policies in place can be found in the table below.
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes                 | 73.136.222.109       |
+| Jump Box | Yes                 | My hom public IP     |
 | Web-1    | No                  | Local Vnet           |
 | Web-2    | No                  | Local Vnet           |
-| ELK      | Yes                 | 73.136.222.109       |
+| ELK      | Yes                 | mY HOME PUBLIC IP    |
 
 ### Elk Configuration
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because multiple servers can easily and quickly be deployed without having to physically touch each server. Going to every machine and configuring individually can be time consuming and tedious
 
-- _TODO: What is the main advantage of automating configuration with Ansible?
-
-The main advantage of the installation process is that multiple servers can easily and quickly be deployed without having to physically touch each server. Going to every machine and configuring individually can be time consuming and tedious
-_
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+
+ 1.Configue the Webservers.
+ 2.Install ELK
+ 3.Install Filebeat
+ 4.Install Metricbeat
+
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+
+
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -106,7 +101,8 @@ How do I specify which machine to install the ELK server on versus which to inst
 
 - _Which URL do you navigate to in order to check that the ELK server is running?
 
-###-As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+
+-As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
 
 http://[your.ELK-VM.External.IP]:5601/app/kibana. In this case http://20.106.148.92:5601/app/kibana.
 
