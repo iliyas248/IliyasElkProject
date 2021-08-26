@@ -73,9 +73,11 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-| Name     | Function           | IP Address     | Operating Sys |---------|--------------------| ---------------|--------------|
-| Web-1     | Host a container(DVWA  |  10.0.0.5 | Linux            |
-| Web-2    | Host a container(DVWA) |  10.0.0.8 | Linux            |
+
+| Name  	| Function              	| IP Address 	| Operating System     	|
+|-------	|-----------------------	|------------	|----------------------	|
+| Web-1 	| Host a Container DVWA 	| 10.0.0.5   	| Linux (ubuntu 20.04) 	|
+| Web-2 	| Host a Container DVWA 	| 10.0.0.8   	| Linux (ubuntu 20.04) 	|
 
 We have installed the following Beats on these machines:
 1.Filebeat
@@ -129,6 +131,10 @@ The URL is http://[your.ELK-VM.External.IP]:5601/app/kibana. In this case http:/
 
 ### References
 
-ilebeat: Lightweight Log Analysis & Elasticsearch. (n.d.). Retrieved August 22, 2020, from https://www.elastic.co/beats/filebeat 
+Elasticsearch, Logstash, Kibana (ELK) Docker image documentation. Retrieved August 12, 2021, from https://elk-docker.readthedocs.io
 
-Metricbeat: Lightweight Shipper for Metrics. (n.d.). Retrieved August 22, 2020, from https://www.elastic.co/beats/metricbeat
+Virtual network peering. (n.d). Retrieved August 12, 2021, from https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview 
+
+filebeat: Lightweight Log Analysis & Elasticsearch. (n.d.). Retrieved August 13, 2021, from https://www.elastic.co/beats/filebeat 
+
+Metricbeat: Lightweight Shipper for Metrics. (n.d.). Retrieved August 13, 2021, from https://www.elastic.co/beats/metricbeat
