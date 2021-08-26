@@ -131,7 +131,7 @@ The URL is http://[your.ELK-VM.External.IP]:5601/app/kibana. In this case http:/
 
 ### References
 
-Elasticsearch, Logstash, Kibana (ELK) Docker image documentation. Retrieved August 12, 2021, from https://elk-docker.readthedocs.io
+Elasticsearch, Logstash, Kibana (ELK) Docker image documentation. (n.d) Retrieved August 12, 2021, from https://elk-docker.readthedocs.io
 
 Virtual network peering. (n.d). Retrieved August 12, 2021, from https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview 
 
