@@ -128,6 +128,7 @@ The URL is http://[your.ELK-VM.External.IP]:5601/app/kibana. In this case http:/
 9. cd /etc/ansible
 10. ansible-playbook metricbeat-playbook.yml (Installs and configures metricbeat)
 11. Open a new browser on Personal Workstation, navigate to (ELK-Server-PublicIP:5601/app/kibana) - This will bring up Kibana Web Portal
+![Filebeat_logs](https://user-images.githubusercontent.com/83253408/130902393-99a91027-40d7-444a-a634-50f53e2c0f76.png)
 
 ### References
 
